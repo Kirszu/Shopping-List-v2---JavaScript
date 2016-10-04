@@ -40,6 +40,10 @@ $(function() {
     e.preventDefault()
     // Pobierz wartość formularza
     var wartoscFormularza = $poleInput.val()
+    // Sprawdzamy czy wartośc formularza jest pusta
+    if(wartoscFormularza == '') {
+      return
+    }
     // Utwórz nowy elemnt <li />
     var $nowyProdukt = $('<li />', { text: wartoscFormularza })
     // Dodaj go do list-style
@@ -54,4 +58,6 @@ $(function() {
   $przedmiot.on('click', function() {
     $(this).toggleClass('kupiony')
   })
+
+
 })
