@@ -27,14 +27,7 @@ $(function() {
   // Pętla tworzaca elementy z powyższej tablicy i wyświetlajaca
   // je na stronie
   for (var i = 0; i < listaZakupow.length; i++) {
-    var $przedmiot = $('<li />', {
-      text: listaZakupow[i].nazwa,
-      class: listaZakupow[i].kupiony ? 'kupiony' : ''
-    })
-    var $button = $('<button />', { text: 'X' })
-
-    $przedmiot.append($button)
-    $listaZakupow.append($przedmiot)
+    $listaZakupow.append(dodawaniePrzedmiotu(listaZakupow[i].nazwa, listaZakupow[i].kupiony))
   }
 
   // Po wysłaniu formularza...
@@ -48,7 +41,9 @@ $(function() {
     if (!wartoscFormularza) return
     // Utwórz nowy elemnt <li />
     var $nowyProdukt = $('<li />', { text: wartoscFormularza })
-    // Dodaj go do list-style
+    var $button = $('<button />', { text: 'X' })
+    $nowyProdukt.append($button)
+    // Dodaj go do listy
     $listaZakupow.append($nowyProdukt)
     // Wyczyść pole input
     $poleInput.val('')
@@ -64,3 +59,13 @@ $(function() {
   })
 
 })
+
+function dodawaniePrzedmiotu (nazwa, kupiony) {
+  var $przedmiot = $('<li />', {
+    text: nazwa,
+    class: kupiony ? 'kupiony' : ''
+  })
+  var $button = $('<button />', { text: 'X' })
+  $przedmiot.append($button)
+  return $przedmiot
+}
