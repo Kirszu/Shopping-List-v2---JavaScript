@@ -32,6 +32,8 @@ main ul li{
   padding: 1px;
   margin: 1px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
 
 main ul li.kupiony {

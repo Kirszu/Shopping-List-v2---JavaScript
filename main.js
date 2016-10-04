@@ -26,12 +26,14 @@ $(function() {
   // Pętla tworzaca elementy z powyższej tablicy i wyświetlajaca
   // je na stronie
   for (var i = 0; i < listaZakupow.length; i++) {
-    $listaZakupow.append(
-      $('<li />', {
-        text: listaZakupow[i].nazwa,
-        class: listaZakupow[i].kupiony ? 'kupiony' : ''
-      })
-    )
+    var $przedmiot = $('<li />', {
+      text: listaZakupow[i].nazwa,
+      class: listaZakupow[i].kupiony ? 'kupiony' : ''
+    })
+    var $button = $('<button />', { text: 'X' })
+
+    $przedmiot.append($button)
+    $listaZakupow.append($przedmiot)
   }
 
   // Po wysłaniu formularza...
@@ -41,9 +43,8 @@ $(function() {
     // Pobierz wartość formularza
     var wartoscFormularza = $poleInput.val()
     // Sprawdzamy czy wartośc formularza jest pusta
-    if(wartoscFormularza == '') {
-      return
-    }
+    // ! to to samo co np. wartoscFormularza == ''
+    if (!wartoscFormularza) return
     // Utwórz nowy elemnt <li />
     var $nowyProdukt = $('<li />', { text: wartoscFormularza })
     // Dodaj go do list-style
@@ -52,10 +53,8 @@ $(function() {
     $poleInput.val('')
   })
 
-  // Zmiana statusu wpisu
-  var $przedmiot = $('li')
-
-  $przedmiot.on('click', function() {
+  // Po kliknięciu zmień status przedmiotu
+  $listaZakupow.on('click', 'li', function() {
     $(this).toggleClass('kupiony')
   })
 
