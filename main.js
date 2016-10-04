@@ -47,4 +47,11 @@ $(function() {
     // Wyczyść pole input
     $poleInput.val('')
   })
+
+  // Zmiana statusu wpisu
+  var $przedmiot = $('li')
+
+  $przedmiot.on('click', function() {
+    $(this).toggleClass('kupiony')
+  })
 })
