@@ -30,6 +30,7 @@ main ul {
 main ul li{
   border: dotted 1px black;
   padding: 1px;
+  margin: 1px;
 }
 
 footer form input {
