@@ -39,12 +39,8 @@ $(function() {
     // Sprawdzamy czy wartośc formularza jest pusta
     // ! to to samo co np. wartoscFormularza == ''
     if (!wartoscFormularza) return
-    // Utwórz nowy elemnt <li />
-    var $nowyProdukt = $('<li />', { text: wartoscFormularza })
-    var $button = $('<button />', { text: 'X' })
-    $nowyProdukt.append($button)
     // Dodaj go do listy
-    $listaZakupow.append($nowyProdukt)
+    $listaZakupow.append(dodawaniePrzedmiotu(wartoscFormularza))
     // Wyczyść pole input
     $poleInput.val('')
   })
@@ -60,12 +56,17 @@ $(function() {
 
 })
 
+// Funkcja dodajaca przedmiot (element <li> z <button> w środku)
 function dodawaniePrzedmiotu (nazwa, kupiony) {
+  // Utwórz przedmiot
   var $przedmiot = $('<li />', {
     text: nazwa,
     class: kupiony ? 'kupiony' : ''
   })
+  // Utwórz przycisk
   var $button = $('<button />', { text: 'X' })
+  // Dodaj przycisk do elementu li
   $przedmiot.append($button)
+  // Zwróc całość
   return $przedmiot
 }
