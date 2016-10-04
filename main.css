@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 20% auto;
+  width: 20%;
+  border: solid 2px blue;
+  background: orange;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+}
+
+main {
+  border: solid 2px black;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main ul {
+  padding: 5px;
+  list-style: none;
+}
+
+main ul li{
+  border: dotted 1px black;
+  padding: 1px;
+}
+
+footer form input {
+  width: 80%;
+}
+
+footer form button {
+  padding: 2px 10px;
+}
