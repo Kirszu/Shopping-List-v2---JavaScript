@@ -22,6 +22,7 @@ $(function() {
   var $listaZakupow = $('ul')
   var $formularz = $('form')
   var $poleInput = $('input')
+  var $button = $('button')
 
   // Pętla tworzaca elementy z powyższej tablicy i wyświetlajaca
   // je na stronie
@@ -57,6 +58,9 @@ $(function() {
   $listaZakupow.on('click', 'li', function() {
     $(this).toggleClass('kupiony')
   })
-
+  // nasłuchuj ul kliknięcia na buttonie i odpal funkcję ktora pobierze z buttona rodzica i go usunie
+  $listaZakupow.on('click', 'button', function() {
+    $(this).parent().remove()
+  })
 
 })

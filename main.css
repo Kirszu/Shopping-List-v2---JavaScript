@@ -40,6 +40,10 @@ main ul li.kupiony {
   text-decoration: line-through;
 }
 
+main ul li.kupiony button {
+  text-decoration: none;
+}
+
 footer form input {
   width: 80%;
 }
