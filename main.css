@@ -32,6 +32,10 @@ main ul li{
   padding: 1px;
 }
 
+main ul li.kupiony {
+  text-decoration: line-through;
+}
+
 footer form input {
   width: 80%;
 }
