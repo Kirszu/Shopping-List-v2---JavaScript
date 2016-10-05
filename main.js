@@ -23,6 +23,7 @@ $(function() {
   var $formularz = $('form')
   var $poleInput = $('input')
   var $button = $('button')
+  var $zakupy = $('li')
   
   
   var $przyciskiKasacji = $('.delete-section')
@@ -59,13 +60,13 @@ $(function() {
     $(this).parent().remove()
   })
   // Usunięcie zaznaczonych
-  $przyciskiKasacji.on('click', '.delete-section__button-checked', function() {
+  $przyciskiKasacji.on('click', $usunZaznaczone, function() {
       var $kupiony = $('.kupiony')
       $kupiony.remove()
   })
   // usunięcie całości
-  $przyciskiKasacji.on('click', '.delete-section__button-all', function() {
-      $listaZakupow.remove()
+  $przyciskiKasacji.on('click', $usunCalosc, function() {
+      $listaZakupow.empty()
   })
 
 })
