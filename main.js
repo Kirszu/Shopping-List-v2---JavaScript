@@ -58,12 +58,12 @@ $(function() {
   $listaZakupow.on('click', 'button', function() {
     $(this).parent().remove()
   })
-  // Usunięcie całości
+  // Usunięcie zaznaczonych
   $przyciskiKasacji.on('click', '.delete-section__button-checked', function() {
       var $kupiony = $('.kupiony')
       $kupiony.remove()
   })
-  // usunięcie zaznaczonych
+  // usunięcie całości
   $przyciskiKasacji.on('click', '.delete-section__button-all', function() {
       $listaZakupow.remove()
   })
