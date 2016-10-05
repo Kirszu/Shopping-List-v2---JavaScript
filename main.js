@@ -23,6 +23,11 @@ $(function() {
   var $formularz = $('form')
   var $poleInput = $('input')
   var $button = $('button')
+  
+  
+  var $przyciskiKasacji = $('.delete-section')
+  var $usunCalosc = $('.delete-section__button-all')
+  var $usunZaznaczone = $('.delete-section__button-checked')
 
   // Pętla tworzaca elementy z powyższej tablicy i wyświetlajaca
   // je na stronie
@@ -53,6 +58,15 @@ $(function() {
   $listaZakupow.on('click', 'button', function() {
     $(this).parent().remove()
   })
+  // Usunięcie całości
+  $przyciskiKasacji.on('click', '.delete-section__button-checked', function() {
+      var $kupiony = $('.kupiony')
+      $kupiony.remove()
+  })
+  // usunięcie zaznaczonych
+  $przyciskiKasacji.on('click', '.delete-section__button-all', function() {
+      $listaZakupow.remove()
+  })
 
 })
 
@@ -72,4 +86,10 @@ function dodawaniePrzedmiotu (nazwa, kupiony) {
   $przedmiot.append($span).append($button)
   // Zwróc całość
   return $przedmiot
+}
+
+// Funkcja kasowania całości
+function usuniecieCalejZawartosci () {
+    var $usunCalosc = $('.delete-section__button-all')
+    
 }
