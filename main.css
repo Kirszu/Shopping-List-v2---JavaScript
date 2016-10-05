@@ -73,16 +73,16 @@ footer form button {
     padding: 2%;
 }
 
-.delete-section .delete-sectin__button {
+.delete-section .delete-section__button {
     padding: 2%;
 }
 
-.delete-section .delete-sectin__button-all {
+.delete-section .delete-section__button-all {
     background: red;
     color: bisque;
 }
 
-.delete-section .delete-sectin__button-checked {
+.delete-section .delete-section__button-checked {
     background: green;
     color: bisque;
 }
