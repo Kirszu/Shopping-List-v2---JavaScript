@@ -58,15 +58,18 @@ $(function() {
 
 // Funkcja dodajaca przedmiot (element <li> z <button> w środku)
 function dodawaniePrzedmiotu (nazwa, kupiony) {
-  // Utwórz przedmiot
+  // Utwórz pole przedmiotu
   var $przedmiot = $('<li />', {
-    text: nazwa,
+    //text: nazwa,    
     class: kupiony ? 'kupiony' : ''
   })
+  // Utwórz przedmiot
+  var $span = $('<span />', { text: nazwa })
   // Utwórz przycisk
   var $button = $('<button />', { text: 'X' })
+  
   // Dodaj przycisk do elementu li
-  $przedmiot.append($button)
+  $przedmiot.append($span).append($button)
   // Zwróc całość
   return $przedmiot
 }
