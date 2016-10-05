@@ -58,16 +58,19 @@ $(function() {
   // nasłuchuj ul kliknięcia na buttonie i odpal funkcję ktora pobierze z buttona rodzica i go usunie
   $listaZakupow.on('click', 'button', function() {
     $(this).parent().remove()
-  })
+  })  
+  
   // Usunięcie zaznaczonych
-  $przyciskiKasacji.on('click', $usunZaznaczone, function() {
-      var $kupiony = $('.kupiony')
-      $kupiony.remove()
-  })
-  // usunięcie całości
-  $przyciskiKasacji.on('click', $usunCalosc, function() {
-      $listaZakupow.empty()
-  })
+  $usunZaznaczone.click(function(){
+        var $kupiony = $('.kupiony')
+       $kupiony.remove()
+   })
+   // usunięcie całości
+   $usunCalosc.click(function() {
+       $listaZakupow.empty()
+   })
+   
+   
 
 })
 
