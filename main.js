@@ -46,7 +46,9 @@ $(function() {
     // ! to to samo co np. wartoscFormularza == ''
     if (!wartoscFormularza) return
     // Dodaj go do listy
-    $listaZakupow.append(dodawaniePrzedmiotu(wartoscFormularza))
+    // Dodanie animacji do dodania przedmiotu do listy. Do ostatniego dziecka listy zakupów dodaje przedmiot, domyślnie ukryty, po czym go animujemy do wyświetlenia.
+    $listaZakupow.append(dodawaniePrzedmiotu(wartoscFormularza)).children(':last').hide().fadeIn(500);
+    
     // Wyczyść pole input
     $poleInput.val('')
   })
@@ -56,21 +58,24 @@ $(function() {
     $(this).toggleClass('kupiony')
   })
   // nasłuchuj ul kliknięcia na buttonie i odpal funkcję ktora pobierze z buttona rodzica i go usunie
+  // Dodanie do ununięcia przedmiotu animacji
   $listaZakupow.on('click', 'button', function() {
-    $(this).parent().remove()
+    $(this).parent().fadeOut()
   })  
   
   // Usunięcie zaznaczonych
   $usunZaznaczone.click(function(){
         var $kupiony = $('.kupiony')
-       $kupiony.remove()
-   })
-   // usunięcie całości
-   $usunCalosc.click(function() {
-       $listaZakupow.empty()
-   })
-   
-   
+        // Animacja znikania zaznaczonych
+       $kupiony.fadeOut()
+  })
+  // usunięcie całości
+  $usunCalosc.click(function() {
+     // Dodanie animacji znikania listy
+     $listaZakupow.children().fadeOut(500, function() {
+          $listaZakupow.empty()   
+       })
+   })   
 
 })
 
@@ -92,8 +97,4 @@ function dodawaniePrzedmiotu (nazwa, kupiony) {
   return $przedmiot
 }
 
-// Funkcja kasowania całości
-function usuniecieCalejZawartosci () {
-    var $usunCalosc = $('.delete-section__button-all')
-    
-}
+
