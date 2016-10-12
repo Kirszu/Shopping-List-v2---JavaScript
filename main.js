@@ -60,14 +60,18 @@ $(function() {
   // nasłuchuj ul kliknięcia na buttonie i odpal funkcję ktora pobierze z buttona rodzica i go usunie
   // Dodanie do ununięcia przedmiotu animacji
   $listaZakupow.on('click', 'button', function() {
-    $(this).parent().fadeOut()
+    $(this).parent().fadeOut(500, function() {
+        $(this).remove()
+    })
   })  
   
   // Usunięcie zaznaczonych
   $usunZaznaczone.click(function(){
         var $kupiony = $('.kupiony')
         // Animacja znikania zaznaczonych
-       $kupiony.fadeOut()
+       $kupiony.fadeOut(500, function() {
+            $kupiony.remove()            
+    })
   })
   // usunięcie całości
   $usunCalosc.click(function() {
@@ -76,7 +80,6 @@ $(function() {
           $listaZakupow.empty()   
        })
    })   
-
 })
 
 // Funkcja dodajaca przedmiot (element <li> z <button> w środku)

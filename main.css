@@ -1,35 +1,70 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 0;  
+  
+  font-size: 62.5%;   
+}
+
+body {
+    background: rgba(0, 190, 160, .8);
+}
+
+h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 8rem;    
+}
+
+h1:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;    
+    background: blue;    
+}
+
+button {
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 1rem;
 }
 
 .container {
   margin: 20% auto;
   width: 25%;
-  border: solid 2px blue;
-  background: orange;
+  -webkit-border-radius: 5%;
+  border-radius: 5%;
+  background: rgba(203, 200, 200, .8);
+  background: url(img/f3e72aa2f66b3441c3e0a278390e5dcb.jpg);  
   padding: 3%;
 }
 
+header {
+     margin-bottom: 6%;
+}
+
 header h1 {
-  text-align: center;
+  text-align: center;    
+   
 }
 
 main {
-  border: solid 2px black;
+ /*  border: solid 2px black;
   -webkit-border-radius: 5px;
-  border-radius: 5px;
+  border-radius: 5px; */
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 main ul {
+  font-family: 'Parisienne', cursive;
+  font-size: 10rem;
   padding: 5px;
   list-style: none;
 }
 
 main ul li{
-  border: dotted 1px black;
+  border-bottom: solid 1px blue;    
   padding: 1px;
   margin: 1px;
   cursor: pointer;
@@ -45,6 +80,7 @@ main ul li{
   justify-content: space-between;
 }
 
+
 main ul li.kupiony span{
   text-decoration: line-through;
 }
@@ -54,6 +90,7 @@ main ul li.kupiony button {
 }
 
 footer form input {
+  font-size: 3rem;    
   width: 65%;
 }
 
@@ -85,4 +122,54 @@ footer form button {
 .delete-section .delete-section__button-checked {
     background: green;
     color: bisque;
+}
+
+@media (max-width: 320px) {
+    .container {
+        margin 0;
+        width: 100%;
+        box-sizing: border-box;            
+    }
+     h1 {
+            font-size: 5rem;
+        }   
+}
+@media (min-width: 321px) and (max-width: 500px) {
+    .container {
+        margin 0;
+        width: 100%;
+        box-sizing: border-box;        
+    }
+    h1 {
+            font-size: 5rem;
+        } 
+}
+@media (min-width: 501px) {
+    .container {
+        margin: 10% auto;
+        width: 95%;
+        box-sizing: border-box;
+    }
+}
+@media (min-width: 701px) {
+    .container {
+        margin: 20% auto;
+        width: 70%;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1001px) {
+    .container {
+        margin: 20% auto;
+        width: 50%;
+        box-sizing: border-box;
+    }
+}
+@media (min-width: 1301px) {
+    .container {
+        margin: 20% auto;
+        width: 40%;
+        box-sizing: border-box;
+    }
 }
