@@ -29,6 +29,8 @@ button {
     padding: 1rem;
 }
 
+
+
 .container {
   margin: 20% auto;
   width: 25%;
@@ -81,11 +83,11 @@ main ul li{
 }
 
 
-main ul li.kupiony span{
+main ul li span.kupiony{
   text-decoration: line-through;
 }
 
-main ul li.kupiony button {
+main ul li button {
   text-decoration: none;
 }
 
@@ -122,6 +124,10 @@ footer form button {
 .delete-section .delete-section__button-checked {
     background: green;
     color: bisque;
+}
+
+.json .btn {       
+    width: 100%;    
 }
 
 @media (max-width: 320px) {

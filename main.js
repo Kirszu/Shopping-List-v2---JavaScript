@@ -24,11 +24,13 @@ $(function() {
   var $poleInput = $('input')
   var $button = $('button')
   var $zakupy = $('li')
+  var $produkt = $('span')
   
   
   var $przyciskiKasacji = $('.delete-section')
   var $usunCalosc = $('.delete-section__button-all')
   var $usunZaznaczone = $('.delete-section__button-checked')
+  var $wyswietlListe = $('.btn')
 
   // Pętla tworzaca elementy z powyższej tablicy i wyświetlajaca
   // je na stronie
@@ -54,7 +56,7 @@ $(function() {
   })
 
   // Po kliknięciu zmień status przedmiotu
-  $listaZakupow.on('click', 'li', function() {
+  $listaZakupow.on('click', 'span', function() {
     $(this).toggleClass('kupiony')
   })
   // nasłuchuj ul kliknięcia na buttonie i odpal funkcję ktora pobierze z buttona rodzica i go usunie
@@ -66,7 +68,7 @@ $(function() {
   })  
   
   // Usunięcie zaznaczonych
-  $usunZaznaczone.click(function(){
+  $usunZaznaczone.click(function() {
         var $kupiony = $('.kupiony')
         // Animacja znikania zaznaczonych
        $kupiony.fadeOut(500, function() {
@@ -79,18 +81,30 @@ $(function() {
      $listaZakupow.children().fadeOut(500, function() {
           $listaZakupow.empty()   
        })
-   })   
+   })
+  // Wyświetl listę json
+  $wyswietlListe.click(function() {
+        $.each(listaZakupow, function(idx, obj) {
+            console.log('id: ' + obj.id + "\n" + 'nazwa: ' + obj.nazwa + "\n" + 'kupiony: ' + obj.kupiony)  
+            
+        })
+    })
 })
+
+    
 
 // Funkcja dodajaca przedmiot (element <li> z <button> w środku)
 function dodawaniePrzedmiotu (nazwa, kupiony) {
   // Utwórz pole przedmiotu
   var $przedmiot = $('<li />', {
     //text: nazwa,    
-    class: kupiony ? 'kupiony' : ''
+    
   })
   // Utwórz przedmiot
-  var $span = $('<span />', { text: nazwa })
+  var $span = $('<span />', { 
+      text: nazwa,
+      class: kupiony ? 'kupiony' : ''
+  })
   // Utwórz przycisk
   var $button = $('<button />', { text: 'X' })
   
