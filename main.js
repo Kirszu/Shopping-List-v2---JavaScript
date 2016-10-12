@@ -25,7 +25,7 @@ $(function() {
   var $button = $('button')
   var $zakupy = $('li')
   var $produkt = $('span')
-  
+  var $kupiony = $('.kupiony')
   
   var $przyciskiKasacji = $('.delete-section')
   var $usunCalosc = $('.delete-section__button-all')
@@ -71,7 +71,7 @@ $(function() {
   $usunZaznaczone.click(function() {
         var $kupiony = $('.kupiony')
         // Animacja znikania zaznaczonych
-       $kupiony.fadeOut(500, function() {
+       $kupiony.parent().fadeOut(500, function() {
             $kupiony.remove()            
     })
   })
