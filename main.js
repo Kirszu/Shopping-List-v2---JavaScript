@@ -73,7 +73,7 @@ $(function() {
   // Usunięcie zaznaczonych
   $usunZaznaczone.click(function() {      
         // Animacja znikania zaznaczonych       
-        //var $kupiony = $('.kupiony')
+        var $kupiony = $('.kupiony')
         $kupiony.fadeOut(500, function() {
             $kupiony.remove()
         })               
@@ -87,10 +87,16 @@ $(function() {
    })
   // Wyświetl listę json
   $wyswietlListe.click(function() {
-        $.each(listaZakupow, function(idx, obj) {
-            console.log('id: ' + obj.id + "\n" + 'nazwa: ' + obj.nazwa + "\n" + 'kupiony: ' + obj.kupiony)  
-            
-        })
+      var myArray = []
+      var $zakupy = $('li')
+      $zakupy.each(function() {          
+          myArray.push({
+              "id": $(this).index(),
+              "title": $(this).text(),
+              "kupiony": $(this).is('.kupiony')
+          })
+      })
+      console.log(myArray)
     })
 })
 
