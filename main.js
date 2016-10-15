@@ -19,7 +19,7 @@ $(function() {
   ]
 
   // Elementy ze strony
-  var $listaZakupow = $('ul')
+  var $listaZakupow = $('ul')  
   var $formularz = $('form')
   var $poleInput = $('input')
   var $button = $('button')
@@ -30,7 +30,8 @@ $(function() {
   var $przyciskiKasacji = $('.delete-section')
   var $usunCalosc = $('.delete-section__button-all')
   var $usunZaznaczone = $('.delete-section__button-checked')
-  var $wyswietlListe = $('.btn')
+  var $wyswietlListe = $('.btn')  
+  
 
   // Pętla tworzaca elementy z powyższej tablicy i wyświetlajaca
   // je na stronie
@@ -56,24 +57,26 @@ $(function() {
   })
 
   // Po kliknięciu zmień status przedmiotu
-  $listaZakupow.on('click', 'span', function() {
+  $listaZakupow.on('click', 'li', function() {
     $(this).toggleClass('kupiony')
   })
   // nasłuchuj ul kliknięcia na buttonie i odpal funkcję ktora pobierze z buttona rodzica i go usunie
   // Dodanie do ununięcia przedmiotu animacji
-  $listaZakupow.on('click', 'button', function() {
+  $listaZakupow.on('click', 'button', function(e) {
+      e.stopPropagation()
     $(this).parent().fadeOut(500, function() {
         $(this).remove()
     })
   })  
   
+
   // Usunięcie zaznaczonych
-  $usunZaznaczone.click(function() {
-        var $kupiony = $('.kupiony')
-        // Animacja znikania zaznaczonych
-       $kupiony.parent().fadeOut(500, function() {
-            $kupiony.remove()            
-    })
+  $usunZaznaczone.click(function() {      
+        // Animacja znikania zaznaczonych       
+        //var $kupiony = $('.kupiony')
+        $kupiony.fadeOut(500, function() {
+            $kupiony.remove()
+        })               
   })
   // usunięcie całości
   $usunCalosc.click(function() {
@@ -98,13 +101,10 @@ function dodawaniePrzedmiotu (nazwa, kupiony) {
   // Utwórz pole przedmiotu
   var $przedmiot = $('<li />', {
     //text: nazwa,    
-    
+    class: kupiony ? 'kupiony' : ''
   })
   // Utwórz przedmiot
-  var $span = $('<span />', { 
-      text: nazwa,
-      class: kupiony ? 'kupiony' : ''
-  })
+  var $span = $('<span />', { text: nazwa })
   // Utwórz przycisk
   var $button = $('<button />', { text: 'X' })
   

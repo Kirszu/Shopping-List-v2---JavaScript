@@ -83,11 +83,11 @@ main ul li{
 }
 
 
-main ul li span.kupiony{
+main ul li.kupiony span{
   text-decoration: line-through;
 }
 
-main ul li button {
+main ul li.kupiony button {
   text-decoration: none;
 }
 
