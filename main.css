@@ -50,10 +50,7 @@ header h1 {
    
 }
 
-main {
- /*  border: solid 2px black;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; */
+main { 
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -70,29 +67,27 @@ main ul li{
   padding: 1px;
   margin: 1px;
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+    overflow: auto;
 }
 
 
 main ul li.kupiony span{
   text-decoration: line-through;
+    float: left;
 }
 
-.delete {
-  text-decoration: none;
+main ul li span{  
+    float: left;
 }
 .edit {
+    float: right;
   text-decoration: none;
 }
+.delete {
+    float: right;
+  text-decoration: none;
+}
+
 
 footer form input {
   font-size: 3rem;    

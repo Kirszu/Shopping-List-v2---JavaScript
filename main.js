@@ -67,8 +67,12 @@ $(function() {
     $(this).parent().fadeOut(500, function() {
         $(this).remove()
     })
+  })
+  // Edycja nazwy produktu po kliknięciu ołówka edycji
+  $('.edit').click(function(e) {
+      e.stopPropagation()
+      
   })  
-  
 
   // Usunięcie zaznaczonych
   $usunZaznaczone.click(function() {      
@@ -110,11 +114,11 @@ function dodawaniePrzedmiotu (nazwa, kupiony) {
   // Utwórz przedmiot
   var $span = $('<span />', { text: nazwa })
   // Utwórz przycisk edycji
-  var $edit = $('<button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>')
+  var $edit = $('<button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true" /></button>')
   // Utwórz przycisk
   var $button = $('<button />', { text: 'X' })  
   // Dodaj przycisk do elementu li
-  $przedmiot.append($span).append($edit).append($button.addClass('delete'))
+  $przedmiot.append($span).append($button.addClass('delete')).append($edit)
   // Zwróc całość
   return $przedmiot
 }
