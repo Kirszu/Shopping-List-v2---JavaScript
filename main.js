@@ -62,7 +62,7 @@ $(function() {
   })
   // nasłuchuj ul kliknięcia na buttonie i odpal funkcję ktora pobierze z buttona rodzica i go usunie
   // Dodanie do ununięcia przedmiotu animacji
-  $listaZakupow.on('click', 'button', function(e) {
+  $listaZakupow.on('click', '.delete', function(e) {
       e.stopPropagation()
     $(this).parent().fadeOut(500, function() {
         $(this).remove()
@@ -109,11 +109,12 @@ function dodawaniePrzedmiotu (nazwa, kupiony) {
   })
   // Utwórz przedmiot
   var $span = $('<span />', { text: nazwa })
+  // Utwórz przycisk edycji
+  var $edit = $('<button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>')
   // Utwórz przycisk
-  var $button = $('<button />', { text: 'X' })
-  
+  var $button = $('<button />', { text: 'X' })  
   // Dodaj przycisk do elementu li
-  $przedmiot.append($span).append($button)
+  $przedmiot.append($span).append($edit).append($button.addClass('delete'))
   // Zwróc całość
   return $przedmiot
 }

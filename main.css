@@ -87,7 +87,10 @@ main ul li.kupiony span{
   text-decoration: line-through;
 }
 
-main ul li.kupiony button {
+.delete {
+  text-decoration: none;
+}
+.edit {
   text-decoration: none;
 }
 
