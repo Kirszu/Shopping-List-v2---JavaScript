@@ -77,7 +77,7 @@ $(function() {
       var $this = $(this)        
       if($this.attr('editing') != '1') {
           $this.attr('editing', 1)
-          $(document).find('.editable').each(function() {
+          $(document).find('span').each(function() {
               var $input = $('<input type="text" class="editing" />').val($this.siblings('span').text())
               $this.siblings('span').replaceWith($input)
           })
