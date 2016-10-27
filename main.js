@@ -72,25 +72,20 @@ $(function() {
   
   // Edycja nazwy produktu po kliknięciu ołówka edycji http://jsfiddle.net/vh5GR/
   $listaZakupow.on('click', '.edit', function(e) {
-      e.preventDefault()
-      
-      var $this = $(this)        
+      e.stopPropagation()
+
+      var $this = $(this)
       if($this.attr('editing') != '1') {
           $this.attr('editing', 1)
-          $(document).find('span').each(function() {
-              var $input = $('<input type="text" class="editing" />').val($this.siblings('span').text())
-              $this.siblings('span').replaceWith($input)
-          })
-          
+          var $input = $('<input type="text" class="editing" />').val($this.siblings('span').text())
+          $this.siblings('span').replaceWith($input)
       } else {
-          $this.removeAttr('editing')          
-          $(document).find('input.editing').each(function() {
-              var span = $('<span />').text($(this).val())
-              $(this).replaceWith(span)
-          })        
-      }                     
-  }) 
- 
+          $this.removeAttr('editing')
+          var span = $('<span />').text($(this).siblings('input.editing').val())
+          $(this).siblings('input.editing').replaceWith(span)
+      }
+  })
+
 
   // Usunięcie zaznaczonych
   $usunZaznaczone.click(function() {      
