@@ -68,11 +68,29 @@ $(function() {
         $(this).remove()
     })
   })
-  // Edycja nazwy produktu po kliknięciu ołówka edycji
-  $('.edit').click(function(e) {
-      e.stopPropagation()
+  
+  
+  // Edycja nazwy produktu po kliknięciu ołówka edycji http://jsfiddle.net/vh5GR/
+  $listaZakupow.on('click', '.edit', function(e) {
+      e.preventDefault()
       
-  })  
+      var $this = $(this)        
+      if($this.attr('editing') != '1') {
+          $this.attr('editing', 1)
+          $(document).find('.editable').each(function() {
+              var $input = $('<input type="text" class="editing" />').val($this.siblings('span').text())
+              $this.siblings('span').replaceWith($input)
+          })
+          
+      } else {
+          $this.removeAttr('editing')          
+          $(document).find('input.editing').each(function() {
+              var span = $('<span />').text($(this).val())
+              $(this).replaceWith(span)
+          })        
+      }                     
+  }) 
+ 
 
   // Usunięcie zaznaczonych
   $usunZaznaczone.click(function() {      
@@ -114,7 +132,7 @@ function dodawaniePrzedmiotu (nazwa, kupiony) {
   // Utwórz przedmiot
   var $span = $('<span />', { text: nazwa })
   // Utwórz przycisk edycji
-  var $edit = $('<button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true" /></button>')
+  var $edit = $('<button class="edit" type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true" /></button>')
   // Utwórz przycisk
   var $button = $('<button />', { text: 'X' })  
   // Dodaj przycisk do elementu li

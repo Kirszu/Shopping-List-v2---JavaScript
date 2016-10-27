@@ -12,6 +12,7 @@ body {
 h1 {
     font-family: 'Satisfy', cursive;
     font-size: 8rem;    
+    text-align: center;
 }
 
 h1:after {
@@ -45,38 +46,35 @@ header {
      margin-bottom: 6%;
 }
 
-header h1 {
-  text-align: center;    
-   
-}
-
 main { 
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-main ul {
+ul {
   font-family: 'Parisienne', cursive;
   font-size: 10rem;
   padding: 5px;
   list-style: none;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-main ul li{
+li{
   border-bottom: solid 1px blue;    
   padding: 1px;
   margin: 1px;
   cursor: pointer;
-    overflow: auto;
+  overflow: hidden;
 }
 
 
-main ul li.kupiony span{
+li.kupiony span{
   text-decoration: line-through;
     float: left;
 }
 
-main ul li span{  
+span{  
     float: left;
 }
 .edit {
@@ -110,22 +108,30 @@ footer form button {
     padding: 2%;
 }
 
-.delete-section .delete-section__button {
+.delete-section__button {
     padding: 2%;
 }
 
-.delete-section .delete-section__button-all {
+.delete-section__button-all {
     background: red;
     color: bisque;
 }
 
-.delete-section .delete-section__button-checked {
+.delete-section__button-checked {
     background: green;
     color: bisque;
 }
 
 .json .btn {       
     width: 100%;    
+}
+
+.editing {
+    font-size: 3rem;
+    padding: 1px;
+    margin: 1px;
+    margin-top: 0;
+    width: 60%;
 }
 
 @media (max-width: 320px) {
