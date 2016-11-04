@@ -1,189 +1,26 @@
-* {
-  margin: 0;
-  padding: 0;
 
-  font-size: 62.5%;
+.lista {
+  margin: 0 auto;
+  width: 30%;
+  border: 2px solid black;
+
 }
 
-body {
-    background: rgba(0, 190, 160, .8);
+.formularz {
+  padding: 3px;
 
 }
 
 h1 {
-    font-family: 'Satisfy', cursive;
-    font-size: 8rem;
     text-align: center;
 }
 
-h1:after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: blue;
+
+ ul {
+   border: 2px solid black;
+   list-style: none;
 }
 
-button {
-    font-size: 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 1rem;
-}
-
-
-
-.container {
-  margin: 20% auto;
-  width: 25%;
-  -webkit-border-radius: 5%;
-  border-radius: 5%;
-  background: rgba(203, 200, 200, .8);
-  background: url(img/f3e72aa2f66b3441c3e0a278390e5dcb.jpg);
-  padding: 3%;
-}
-
-header {
-     margin-bottom: 6%;
-}
-
-main {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-ul {
-  font-family: 'Parisienne', cursive;
-  font-size: 10rem;
-  padding: 5px;
-  list-style: none;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-li{
-  border-bottom: solid 1px blue;
-  padding: 1px;
-  margin: 1px;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-
-li.kupiony span{
+.przekreslenie {
   text-decoration: line-through;
-    float: left;
-}
-
-span{
-    float: left;
-}
-.edit {
-    float: right;
-  text-decoration: none;
-}
-.delete {
-    float: right;
-  text-decoration: none;
-}
-
-
-footer form input {
-  font-size: 3rem;
-  width: 65%;
-}
-
-footer form button {
-  padding: 2% 5%;
-}
-
-.delete-section {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    padding: 2%;
-}
-
-.delete-section__button {
-    padding: 2%;
-}
-
-.delete-section__button-all {
-    background: red;
-    color: bisque;
-}
-
-.delete-section__button-checked {
-    background: green;
-    color: bisque;
-}
-
-.json .btn {
-    width: 100%;
-}
-
-.editing {
-    font-size: 3rem;
-    padding: 1px;
-    margin: 1px;
-    margin-top: 0;
-    width: 60%;
-}
-
-@media (max-width: 320px) {
-    .container {
-        margin: 10px auto 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-     h1 {
-            font-size: 5rem;
-        }
-}
-@media (min-width: 321px) and (max-width: 500px) {
-    .container {
-        margin: 10px auto 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    h1 {
-            font-size: 5rem;
-        }
-}
-@media (min-width: 501px) {
-    .container {
-        margin: 10px auto 0;
-        width: 95%;
-        box-sizing: border-box;
-    }
-}
-@media (min-width: 701px) {
-    .container {
-        margin: 10px auto 0;
-        width: 70%;
-        box-sizing: border-box;
-    }
-}
-
-@media (min-width: 1001px) {
-    .container {
-        margin: 10px auto 0;
-        width: 50%;
-        box-sizing: border-box;
-    }
-}
-@media (min-width: 1301px) {
-    .container {
-
-  margin: 10px auto 0;
-  width: 50%;
-  box-sizing: border-box;
-
-
-    }
 }
