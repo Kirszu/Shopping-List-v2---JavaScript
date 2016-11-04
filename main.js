@@ -18,9 +18,13 @@ $(function() {
       kupiony: false
     }
   ]
-
+    // Iteracja po elementach tablicy
   for (var indekz = 0; indekz < listaZSerwera.length; indekz++) {
-    $("ul").append($("<li>").text(listaZSerwera[indekz].nazwa))
+    $("ul") // 1. Pobierz element <ul> z DOMu
+      .append( // 2. Dodaj do niego...
+        $("<li>") // 3. Element <li> i...
+          .text(listaZSerwera[indekz].nazwa) // 4. Nadaj mu nazwę bedącą parametrem z obiektu
+      )
   }
 
   //Nasluchiwanie elementow w liscie
