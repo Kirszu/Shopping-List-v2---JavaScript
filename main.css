@@ -1,17 +1,18 @@
 * {
   margin: 0;
-  padding: 0;  
-  
-  font-size: 62.5%;   
+  padding: 0;
+
+  font-size: 62.5%;
 }
 
 body {
     background: rgba(0, 190, 160, .8);
+
 }
 
 h1 {
     font-family: 'Satisfy', cursive;
-    font-size: 8rem;    
+    font-size: 8rem;
     text-align: center;
 }
 
@@ -19,8 +20,8 @@ h1:after {
     content: "";
     display: block;
     height: 2px;
-    width: 100%;    
-    background: blue;    
+    width: 100%;
+    background: blue;
 }
 
 button {
@@ -38,7 +39,7 @@ button {
   -webkit-border-radius: 5%;
   border-radius: 5%;
   background: rgba(203, 200, 200, .8);
-  background: url(img/f3e72aa2f66b3441c3e0a278390e5dcb.jpg);  
+  background: url(img/f3e72aa2f66b3441c3e0a278390e5dcb.jpg);
   padding: 3%;
 }
 
@@ -46,7 +47,7 @@ header {
      margin-bottom: 6%;
 }
 
-main { 
+main {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -61,7 +62,7 @@ ul {
 }
 
 li{
-  border-bottom: solid 1px blue;    
+  border-bottom: solid 1px blue;
   padding: 1px;
   margin: 1px;
   cursor: pointer;
@@ -74,7 +75,7 @@ li.kupiony span{
     float: left;
 }
 
-span{  
+span{
     float: left;
 }
 .edit {
@@ -88,7 +89,7 @@ span{
 
 
 footer form input {
-  font-size: 3rem;    
+  font-size: 3rem;
   width: 65%;
 }
 
@@ -122,8 +123,8 @@ footer form button {
     color: bisque;
 }
 
-.json .btn {       
-    width: 100%;    
+.json .btn {
+    width: 100%;
 }
 
 .editing {
@@ -136,34 +137,34 @@ footer form button {
 
 @media (max-width: 320px) {
     .container {
-        margin 0;
+        margin: 10px auto 0;
         width: 100%;
-        box-sizing: border-box;            
+        box-sizing: border-box;
     }
      h1 {
             font-size: 5rem;
-        }   
+        }
 }
 @media (min-width: 321px) and (max-width: 500px) {
     .container {
-        margin 0;
+        margin: 10px auto 0;
         width: 100%;
-        box-sizing: border-box;        
+        box-sizing: border-box;
     }
     h1 {
             font-size: 5rem;
-        } 
+        }
 }
 @media (min-width: 501px) {
     .container {
-        margin: 10% auto;
+        margin: 10px auto 0;
         width: 95%;
         box-sizing: border-box;
     }
 }
 @media (min-width: 701px) {
     .container {
-        margin: 20% auto;
+        margin: 10px auto 0;
         width: 70%;
         box-sizing: border-box;
     }
@@ -171,15 +172,18 @@ footer form button {
 
 @media (min-width: 1001px) {
     .container {
-        margin: 20% auto;
+        margin: 10px auto 0;
         width: 50%;
         box-sizing: border-box;
     }
 }
 @media (min-width: 1301px) {
     .container {
-        margin: 20% auto;
-        width: 40%;
-        box-sizing: border-box;
+
+  margin: 10px auto 0;
+  width: 50%;
+  box-sizing: border-box;
+
+
     }
 }
