@@ -1,47 +1,67 @@
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: black;
 }
 
-
 .lista {
-  margin: 0 auto;
+  margin: 10px auto 0;
   width: 30%;
   border: 2px solid wheat;
   background-color: #76276C;
-  box-sizing: border-box;
 }
 
 .formularz {
+  display: flex;
   padding: 3px;
   margin: 0 auto;
 }
 
+input {
+  font-size: 1.8vw;
+  width: 100%;
+}
+
 h1 {
   font-size: 4vw;
-    text-align: center;
-    color: white;
-    box-sizing: border-box;
+  text-align: center;
+  color: white;
 }
 
 li {
-  text-align: left;
   font-size: 2.5vw;
   color: wheat;
+  cursor: pointer;
 }
 
- ul {
-   border: 2px solid black;
-   list-style: none;
-   background-color: #9D3D91;
-   box-sizing: border-box;}
+ul {
+ border: 2px solid black;
+ list-style: none;
+ background-color: #9D3D91;
+ padding-left: 1vw;
+}
 
 .przekreslenie {
   text-decoration: line-through;
   color: black;
 }
 
-
 button {
+  padding: 3px;
+  margin-left: 5px;
   background-color: #CB59BD;
+  border: none;
+  font-size: 2vw;
+  color: white;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #9D3D91;
 }
