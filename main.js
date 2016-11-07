@@ -41,4 +41,8 @@ $(function() {
     */
   })
 
+  $('.formularz').submit(function(e) {
+    e.preventDefault();
+  })
+
 })
