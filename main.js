@@ -41,8 +41,26 @@ $(function() {
     */
   })
 
-  $('.formularz').submit(function(e) {
-    e.preventDefault();
-  })
+
+
 
 })
+
+$('form').submit(function(e) { e.preventDefault() })
+
+//Dodawanie przedmiotow
+document.getElementById("add").addEventListener("click", function() {
+  var value = document.getElementById("item").value;
+  if (value) addItem(value);
+});
+
+function addItem(text) {
+
+  $('<li />', { text: text }).appendTo($('#list'))
+  //
+  // var list = document.getElementById("list");
+  // 
+  // var item = document.createElement("li");
+  // item.innerText = text;
+  // list.appendChild(item);
+}
