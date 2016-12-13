@@ -1,1 +1,1 @@
-# js-basics
+# RWD version of Shopping List
